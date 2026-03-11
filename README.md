@@ -10,4 +10,10 @@ Hospital readmissions within 30 days cost the U.S. healthcare system over $26 bi
 ## Datset Source
 https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
 For this project the datset was directly imported in python using _**ucimlrepo**_. (more information available through link)
+## Tools used
+Jupyter Notebook
+Python (Pandas, numpy, maplotlib, seaborn, warnings)
+GitHub
+## Project Date
+03-11-2026
 ## Dataset
