@@ -1,5 +1,5 @@
 # patient_readmission_prediction
-This project builds a full analytics pipeline from raw data exploration to a machine learning model, using real world health data. It is a learning experience to demonstrate end-to-end analytical thinking helpful for analyst roles in health systems, insurance, pharma, and healthtech.
+This project builds a full analytics pipeline from raw data exploration to a machine learning model, using real world health data. It is a learning experience to demonstrate end-to-end analytical thinking helpful for analyst roles in health systems, insurance, pharma, and healthtech. (Note: Healthcare is one of the most impactful analyses because it directly affects real people's lives)
 ## Why prediction is needed?
 Hospital readmissions within 30 days cost the U.S. healthcare system over $26 billion annually. Predicting which patients are at high risk of readmission allows hospitals to intervene early, improve patient outcomes, and reduce costs.
 ## This project answers
@@ -30,10 +30,13 @@ For this project the datset was directly imported in python using _**ucimlrepo**
 - Dropped 5 huge missing columns(missing % above 40)
 - Filled 4 low missing columns
 ## Analysis
-### Demographic analysis - How Age, Gender and Race relate to Readmission rates? This is to identify high risk groups.
+### Demographic analysis - How Age, Gender and Race relate to Readmission rates? This is to identify WHO IS AT RISK?
 - **_AGE Insights_** : According to age analysis, patients aged 20-30 have the highest 30-day readmission rate at 14.24%, higher than the lederly patients. Possible reasins could be dietary habits, Less post discharge monitoring compared to elderly patients.
 - **_GENDER Insights_** :Although Females are higher in count, both the genders show nearly identicl readmission rates.(Females: 11.25%, Males: 11.06%). The difference is negligibe suggesting gender alone is not a strong predictor of 30 day readmission.
+- **_RACE Insights_** :Caucasian patients dominate the dataset at 76,099(75% of all patients), nearly 6 times more than any other racial group. Readmission Rates clustered into 2 groups, Caucasian(11.29%) and African American(11.22%) with higher risk, Hispanic(10.41%) and Asian(10.14%) with lower risk._ (Although rate differences are small, 1% reduction in Caucasian race patients readmission may impact thousands of patients.)_ Teh rate of Unknown race(8.23%) should be treated with caution due to incomplete data.
+### Clinical analysis - How length of stay, medications, lab procedures, and prior visits relate to readmission rates? This is to identify WHY THEY ARE AT RISK?
 ## Business Recommendation
 - Hospital should implement targeted follow up programs for younger age groups, not just elderly.
+- Hospital readmission reduction programs should prioritize Caucasian and AfricanAmerican patients given  their combination of high volume and elevated readmission rates.
 
  
