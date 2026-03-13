@@ -28,6 +28,9 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 ## Data Cleaning
 - Dropped 5 huge missing columns(missing % above 40)
 - Filled 4 low missing columns
+## Feature Engineering
+- Binary Target Variable: Converted text categories into number, also called as label encoding.
+- Medications Bins: Converted raw medication counts into meaningful groups.
 ## Analysis
 ### Demographic analysis - How Age, Gender and Race relate to Readmission rates? This is to identify WHO IS AT RISK?
 - **_AGE Insights_** : According to age analysis, patients aged 20-30 have the highest 30-day readmission rate at 14.24%, higher than the lederly patients. Possible reasins could be dietary habits, Less post discharge monitoring compared to elderly patients.
@@ -35,9 +38,10 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 - **_RACE Insights_** :Caucasian patients dominate the dataset at 76,099(75% of all patients), nearly 6 times more than any other racial group. Readmission Rates clustered into 2 groups, Caucasian(11.29%) and African American(11.22%) with higher risk, Hispanic(10.41%) and Asian(10.14%) with lower risk._(Although rate differences are small, 1% reduction in Caucasian race patients readmission may impact thousands of patients.)_The rate of Unknown race(8.23%) should be treated with caution due to incomplete data.
 ### Clinical analysis - How length of stay, medications, lab procedures, and prior visits relate to readmission rates? This is to identify WHY THEY ARE AT RISK?
 - **_Length of Stay Insights_** : Although patients staying 1-4 days represent ~75% od all encounters, readmisison rates steadily increased with lenth of stay. Patients staying 8-10 days show the highest readmission rates(13.72% - 14.35%) suggesting could be the most complex cases.
-## Business Recommendation
+- - **_Number of Medications Insights_** : A clear monotonic relationship exists between number of medications and 30-day readmission rate. Crossing 10 medications represents a significant risk threshold with a 1.85% jump in readmission rate. This consistent pattern makes num_medications a strong  candidate predictor variable for our ML model.
+## Business Recommendations
 - Hospital should implement targeted follow up programs for younger age groups, not just elderly.
 - Hospital readmission reduction programs should prioritize Caucasian and AfricanAmerican patients given  their combination of high volume and elevated readmission rates. AN unusual drop to 10.51% observed in case of 11 days, reflecting either a careful discharge planning or a small sample size(n=1,855).
 - Patients with 7+ days stay should be flagged for enhanced discharge planning and post discharge follow up calls to reduce readmission risk.
-
+- Patients prescribed 16+ medications should be automatically flagged for medication reconciliation review before discharge to reduce readmission risk.
  
