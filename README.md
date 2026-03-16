@@ -40,8 +40,17 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 - **_Length of Stay Insights (Monotonic - Strong)_** : Although patients staying 1-4 days represent ~75% od all encounters, readmisison rates steadily increased with lenth of stay. Patients staying 8-10 days show the highest readmission rates(13.72% - 14.35%) suggesting could be the most complex cases.
 - **_Number of Medications Insights (Monotonic - Very Strong)_** : A clear monotonic relationship exists between number of medications and 30-day readmission rate. Crossing 10 medications represents a significant risk threshold with a 1.85% jump in readmission rate. This consistent pattern makes num_medications a strong  candidate predictor variable for our ML model.
 - **_Number of Lab Procedures (Monotonic - Moderate)_** : A clear monotonic relationship exists between number of lab procedures and 30-day readmission rate. Crossing 31 lab procedures represents a key risk threshold with a 1.803% jump in readmission rate. Compared to medications, lab procedures show a weaker but consistent signal.(Quarile based binning produced balanced groups of ~25000 patients each)
-- **_Prior Visits Analysis_** : The **"Inpatient"** the STRONGEST predictor with a 263% increase from None(8.44%) to High(30.70%), Patients with 4+ inpatient visits are 3.6x more likely to be readmitted. **"Emergency"** also exhibits monotonic realtionsip confirming strong predictive power. A 173% increase from None(10.47%) to High(28.54%). "Ourpatient" is a weak predictor as regular outpatient attendance may indicate active health management.
-  
+- **_Prior Visits Analysis_** : The **"Inpatient"** the STRONGEST predictor with a 263% increase from None(8.44%) to High(30.70%), Patients with 4+ inpatient visits are 3.6x more likely to be readmitted. **"Emergency"** also exhibits monotonic realtionsip confirming strong predictive power. A 173% increase from None(10.47%) to High(28.54%). **"Outpatient"** is a weak predictor as regular outpatient attendance may indicate active health management.
+- **_Diagnosis Group Analysis_** : Diabetes has the highest readmission rate at 12.98% but circulatory disease has the highest absolute readmission volume due to its large patient count (30,437 patients). **_Relative impact(rate) vs Absolute impact(count*rate)_**:The distinction between relative rate and absolute impact is critical for hospital resource planning.
+### Our complete predictor summary so far:
+    | Feature          | Pattern       | Strength     |
+    | Lebgth of Stay   | Monotonic     | Strong       |
+    | Medications      | Monotonic     | Very Strong  |
+    | Lab Procedures   | Monotonic     | Moderate     |
+    | Inpatient visits | Monotonic     | Strongest    |
+    | Emergency visits | Monotonic     | Strong       |
+    | Outpatient visits| Flat          | Weak         |
+    | Diagnosis group  | Varies by Cond| Strong       |
 ## Business Recommendations
 - Hospital should implement targeted follow up programs for younger age groups, not just elderly.
 - Hospital readmission reduction programs should prioritize Caucasian and AfricanAmerican patients given  their combination of high volume and elevated readmission rates. AN unusual drop to 10.51% observed in case of 11 days, reflecting either a careful discharge planning or a small sample size(n=1,855).
@@ -49,4 +58,6 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 - Patients prescribed 16+ medications should be automatically flagged for medication reconciliation review before discharge to reduce readmission risk.
 - Patients with 32+ lab procedures  should be considered for enhanced post discharge monitoring as they represent elevated readmission risk.
 - Prior inpatient visit count should be the PRIMARY flag for high risk patient identification. Any patient with 2+ prior inpatient visits should automatically trigger an enhanced discharge planning protocol.
+- For targeted clinical programs → focus on Diabetes (highest rate)
+- For budget and resource planning → focus on Circulatory disease as it drives the most actual readmissions
  
