@@ -43,7 +43,7 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 - **_Prior Visits Analysis_** : The **"Inpatient"** the STRONGEST predictor with a 263% increase from None(8.44%) to High(30.70%), Patients with 4+ inpatient visits are 3.6x more likely to be readmitted. **"Emergency"** also exhibits monotonic realtionsip confirming strong predictive power. A 173% increase from None(10.47%) to High(28.54%). **"Outpatient"** is a weak predictor as regular outpatient attendance may indicate active health management.
 - **_Diagnosis Group Analysis_** : Diabetes has the highest readmission rate at 12.98% but circulatory disease has the highest absolute readmission volume due to its large patient count (30,437 patients). **_Relative impact(rate) vs Absolute impact(count*rate)_**:The distinction between relative rate and absolute impact is critical for hospital resource planning.
 ### Our complete predictor summary so far:
-    | Feature          | Pattern       | Strength     |
+    |Feature           | Pattern       | Strength     |
     | Lebgth of Stay   | Monotonic     | Strong       |
     | Medications      | Monotonic     | Very Strong  |
     | Lab Procedures   | Monotonic     | Moderate     |
