@@ -51,6 +51,8 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
     | Emergency visits | Monotonic     | Strong       |
     | Outpatient visits| Flat          | Weak         |
     | Diagnosis group  | Varies by Cond| Strong       |
+### Correlation Analysis 
+- Pearson correlation only captures LINEAR relationships. Several features like number_inpatient show non-linear exponential patterns that correlation underestimates.
 ## Business Recommendations
 - Hospital should implement targeted follow up programs for younger age groups, not just elderly.
 - Hospital readmission reduction programs should prioritize Caucasian and AfricanAmerican patients given  their combination of high volume and elevated readmission rates. AN unusual drop to 10.51% observed in case of 11 days, reflecting either a careful discharge planning or a small sample size(n=1,855).
