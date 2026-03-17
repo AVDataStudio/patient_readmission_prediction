@@ -10,10 +10,15 @@ Hospital readmissions within 30 days cost the U.S. healthcare system over $26 bi
 ## Datset Source
 https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
 ## Tools
-- Anaconda environment
-- Jupyter Notebook
-- Python (Pandas, numpy, maplotlib, seaborn, warnings)
+- Anaconda
+- Jupyter
+- Python(Pandas, numpy, maplotlib, seaborn)
 - GitHub
+## Key Findings
+- Inpatient visits strongest predictor (263% increase in risk)
+- Young adults 20-30 surprisingly highest readmission rate
+- Circulatory disease drives most actual readmissions
+- Medications 16+ significant risk threshold
 ## Project Date
 03-11-2026
 ## Dataset Charecteristics 
