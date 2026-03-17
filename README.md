@@ -19,23 +19,6 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 - Young adults 20-30 surprisingly highest readmission rate
 - Circulatory disease drives most actual readmissions
 - Medications 16+ significant risk threshold
-## Project Date
-03-11-2026
-## Dataset Charecteristics 
-- Subject area - Health and Medicine
-- Feature Type - categorical, Integer
-- Instances(rows) - 101766
-- Features(columns) - 50
-## Data Profiling
-- 37 Object(text) Columns
-- 13 Integer Columns
-- Target Variable: Readmission Categories
-## Data Cleaning
-- Dropped 5 huge missing columns(missing % above 40)
-- Filled 4 low missing columns
-## Feature Engineering
-- Binary Target Variable: Converted text categories into number, also called as label encoding.
-- Medications Bins: Converted raw medication counts into meaningful groups.
 ## Analysis
 ### Demographic analysis - How Age, Gender and Race relate to Readmission rates? Identifies WHO IS AT RISK?
 - **_AGE Insights_** : According to age analysis, patients aged 20-30 have the highest 30-day readmission rate at 14.24%, higher than the lederly patients. Possible reasins could be dietary habits, Less post discharge monitoring compared to elderly patients.
@@ -67,4 +50,22 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 - Prior inpatient visit count should be the PRIMARY flag for high risk patient identification. Any patient with 2+ prior inpatient visits should automatically trigger an enhanced discharge planning protocol.
 - For targeted clinical programs → focus on Diabetes (highest rate)
 - For budget and resource planning → focus on Circulatory disease as it drives the most actual readmissions
- 
+
+# More Information
+## Project Date
+03-11-2026
+## Dataset Charecteristics 
+- Subject area - Health and Medicine
+- Feature Type - categorical, Integer
+- Instances(rows) - 101766
+- Features(columns) - 50
+## Data Profiling
+- 37 Object(text) Columns
+- 13 Integer Columns
+- Target Variable: Readmission Categories
+## Data Cleaning
+- Dropped 5 huge missing columns(missing % above 40)
+- Filled 4 low missing columns
+## Feature Engineering
+- Binary Target Variable: Converted text categories into number, also called as label encoding.
+- Medications Bins: Converted raw medication counts into meaningful groups.
