@@ -19,6 +19,7 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 - Young adults 20-30 surprisingly highest readmission rate
 - Circulatory disease drives most actual readmissions
 - Medications 16+ significant risk threshold
+- Comorbidity score of 2 shows highest readmission rate (11.39%) (average score was 1.77)
 ## Analysis
 ### Demographic analysis - How Age, Gender and Race relate to Readmission rates? Identifies WHO IS AT RISK?
 - **_AGE Insights_** : According to age analysis, patients aged 20-30 have the highest 30-day readmission rate at 14.24%, higher than the elderly patients. Possible reasons could be dietary habits, less post discharge monitoring compared to elderly patients.
@@ -50,7 +51,9 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 - Prior inpatient visit count should be the PRIMARY flag for high risk patient identification. Any patient with 2+ prior inpatient visits should automatically trigger an enhanced discharge planning protocol.
 - For targeted clinical programs → focus on Diabetes (highest rate)
 - For budget and resource planning → focus on Circulatory disease as it drives the most actual readmissions
-
+## Feature Engineering
+- _**Comorbifity Score Insights:**_ This was calculated to understand its relation with Readmission rate. The score signifies the total medical condiions the atient sis daignzed with. Score 2 shows highest readmission rate (11.39%) while 
+score 3 slightly drops (10.94%) — suggesting highly complex patients receive more careful discharge planning.
 # More Information
 ## Project Date
 03-11-2026
@@ -66,6 +69,4 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 ## Data Cleaning
 - Dropped 5 huge missing columns(missing % above 40)
 - Filled 4 low missing columns
-## Feature Engineering
-- Binary Target Variable: Converted text categories into number, also called as label encoding.
-- Medications Bins: Converted raw medication counts into meaningful groups.
+
