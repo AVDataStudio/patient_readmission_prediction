@@ -52,8 +52,11 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 - For targeted clinical programs → focus on Diabetes (highest rate)
 - For budget and resource planning → focus on Circulatory disease as it drives the most actual readmissions
 ## Feature Engineering
-- _**Comorbifity Score Insights:**_ This was calculated to understand its relation with Readmission rate. The score signifies the total medical condiions the atient sis daignzed with. Score 2 shows highest readmission rate (11.39%) while 
+- _**Age Encoding**_ Converted age brackets to numeric midpoint(preserves the true numeric meaning of age [20-30] is 25) values so the ML model can understand age as a continuous number.
+- _**Diagnosis Grouping**_ Converted Converted raw ICD-9 diagnosis codes into 9 meaningful clinical categories across all 3 diagnosis columns.
+- _**Comorbifity Score**_ Calculated to understand its relation with Readmission rate. The score signifies the total medical condiions the atient sis daignzed with. Score 2 shows highest readmission rate (11.39%) while 
 score 3 slightly drops (10.94%) — suggesting highly complex patients receive more careful discharge planning.
+- _**Prior Visits Score:**_ This is a weighted score derived from all 3 patient visits. The initial formula showed a max of 160 and 75th perentile at 3. The 99th percentile for emergency visits was 3 indicating extreme outliers ranging upto 76. The emergency visits were capped at 99th percentile to reduce influence of outliers and the score was recalculated. The new max score after capping was reduced to 29.
 # More Information
 ## Project Date
 03-11-2026
@@ -69,4 +72,7 @@ score 3 slightly drops (10.94%) — suggesting highly complex patients receive m
 ## Data Cleaning
 - Dropped 5 huge missing columns(missing % above 40)
 - Filled 4 low missing columns
+
+## Domain Terms
+- ICD-9- International Classification of Diseases 9th Revision 
 
