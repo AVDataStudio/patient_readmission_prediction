@@ -54,10 +54,14 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 ## Feature Engineering
 - _**Age Encoding**_ Converted age brackets to numeric midpoint(preserves the true numeric meaning of age [20-30] is 25) values so the ML model can understand age as a continuous number.
 - _**Diagnosis Grouping**_ Converted Converted raw ICD-9 diagnosis codes into 9 meaningful clinical categories across all 3 diagnosis columns.
-- _**Comorbifity Score**_ Calculated to understand its relation with Readmission rate. The score signifies the total medical condiions the atient sis daignzed with. Score 2 shows highest readmission rate (11.39%) while 
+- _**Comorbidity Score**_ Calculated to understand its relation with Readmission rate. The score signifies the total medical condiions the patient is daignosed with. Score 2 shows highest readmission rate (11.39%) while 
 score 3 slightly drops (10.94%) — suggesting highly complex patients receive more careful discharge planning.
 - _**Prior Visits Score:**_ This is a weighted score derived from all 3 patient visits. The initial formula showed a max of 160 and 75th perentile at 3. The 99th percentile for emergency visits was 3 indicating extreme outliers ranging upto 76. The emergency visits were capped at 99th percentile to reduce influence of outliers and the score was recalculated. The new max score after capping was reduced to 29.
-# More Information
+- _**Medication Changes Flags:**_ : Performed Binary encoding. Medication chnages signal unstable condition, Insulin chnage had readmission rate of 13.46%(2.99% increase)  and other medications was 13.06%(2.61% increase). Bith can be used significantly to predict readmission.
+- _**Categorical Encoding**_ Converted remaining text columns to numbers using two strategies:
+    - Label Encoding (Binary): Applied to columns with only 2 categories — gender (Male=0, Female=1), change (No=0, Ch=1), diabetesMed (No=0, Yes=1)
+    - One Hot Encoding: Applied to nominal columns with 3+ categories and no natural order — race (6 categories), diag_1_group, diag_2_group, diag_3_group (9 categories each).Each category became its own 0/1 column.
+# Addl Information
 ## Project Date
 03-11-2026
 ## Dataset Charecteristics 
