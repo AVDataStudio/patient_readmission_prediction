@@ -1,5 +1,5 @@
 # patient_readmission_prediction
-This project builds a full analytics pipeline from raw data exploration to a machine learning model, using real world health data. It is a learning experience to demonstrate end-to-end analytical thinking helpful for analyst roles in health systems, insurance, pharma, and healthtech. (Note: Healthcare is one of the most impactful analyses because it directly affects real people's lives)
+This project builds a full analytics pipeline from raw data exploration to a machine learning model, using real world health data. It demonstrates end-to-end analytical skills for health systems, insurance, pharma, and healthtech. (Note: Healthcare is one of the most impactful analyses because it directly affects real people's lives)
 ## Why prediction is needed?
 Hospital readmissions within 30 days cost the U.S. healthcare system over $26 billion annually. Predicting which patients are at high risk of readmission allows hospitals to intervene early, improve patient outcomes, and reduce costs.
 ## This project answers
