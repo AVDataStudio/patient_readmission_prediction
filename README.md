@@ -12,7 +12,7 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 ## Tools
 - Anaconda
 - Jupyter
-- Python(Pandas, numpy, maplotlib, seaborn)
+- Python(Pandas, numpy, maplotlib, seaborn, scikit-learn,XGBo0st)
 - GitHub
 ## Key Findings
 - Inpatient visits strongest predictor (263% increase in risk)
@@ -20,6 +20,7 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 - Circulatory disease drives most actual readmissions
 - Medications 16+ significant risk threshold
 - Comorbidity score of 2 shows highest readmission rate (11.39%) (average score was 1.77)
+# Notebook 1
 ## Analysis
 ### Demographic analysis - How Age, Gender and Race relate to Readmission rates? Identifies WHO IS AT RISK?
 - **_AGE Insights_** : According to age analysis, patients aged 20-30 have the highest 30-day readmission rate at 14.24%, higher than the elderly patients. Possible reasons could be dietary habits, less post discharge monitoring compared to elderly patients.
@@ -51,6 +52,7 @@ https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999
 - Prior inpatient visit count should be the PRIMARY flag for high risk patient identification. Any patient with 2+ prior inpatient visits should automatically trigger an enhanced discharge planning protocol.
 - For targeted clinical programs → focus on Diabetes (highest rate)
 - For budget and resource planning → focus on Circulatory disease as it drives the most actual readmissions
+# Notebook 2
 ## Feature Engineering
 - _**Age Encoding**_ Converted age brackets to numeric midpoint(preserves the true numeric meaning of age [20-30] is 25) values so the ML model can understand age as a continuous number.
 - _**Diagnosis Grouping**_ Converted Converted raw ICD-9 diagnosis codes into 9 meaningful clinical categories across all 3 diagnosis columns.
@@ -61,6 +63,16 @@ score 3 slightly drops (10.94%) — suggesting highly complex patients receive m
 - _**Categorical Encoding**_ Converted remaining text columns to numbers using two strategies:
     - Label Encoding (Binary): Applied to columns with only 2 categories — gender (Male=0, Female=1), change (No=0, Ch=1), diabetesMed (No=0, Yes=1)
     - One Hot Encoding: Applied to nominal columns with 3+ categories and no natural order — race (6 categories), diag_1_group, diag_2_group, diag_3_group (9 categories each).Each category became its own 0/1 column.
+# Notebook 3
+## Machine Learning Model
+- The dataset has a **class imbalance**, only 11.2% of patients were readmitted; Used class_weight='balanced' to force the model to pay equal attention to both classes.
+- The data was split 80/20 into training and test sets. Statification implemented for good fit 
+### Models Built:
+    - Logistic Regression  Baseline model: ROC-AUC: 0.649 — above random baseline (0.5), Recall for readmissions: 53% — finds half of actual cases, Precision for readmissions: 17% — high false alarm rate
+    - Random Forest  More powerful model: ROC-AUC: 0.654 — above random baseline (0.5), Recall for readmissions: 1% — predicts all as not readmitted, Precision for readmissions: 59% — high false alarm rate| Accuracy-89% misleading
+    - XGBoost  Best performing model: 
+    - SHAP Analysis  Model explainability 
+ - Note:High accuracy ≠ good model for imbalanced data.
 # Addl Information
 ## Project Date
 03-11-2026
