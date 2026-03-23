@@ -6,13 +6,12 @@ Hospital readmissions within 30 days cost the U.S. healthcare system over $26 bi
 1. What patient demographics and clinical factors are most associated with 30-day readmission?
 2. Can this reliably predict which patienst will be readmitted before discharge?
 3. Which interventions(by daignosis) would have the highest cost saving impact?
-4. How do readmission rates vary across hospital departments and time?
 ## Datset Source
 https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
 ## Tools
 - Anaconda
 - Jupyter
-- Python(Pandas, numpy, maplotlib, seaborn, scikit-learn,XGBo0st)
+- Python(Pandas, numpy, maplotlib, seaborn, scikit-learn,XGBo0st,SHAP)
 - GitHub
 ## Key Findings
 - Inpatient visits strongest predictor (263% increase in risk)
@@ -81,6 +80,8 @@ score 3 slightly drops (10.94%) — suggesting highly complex patients receive m
 | XGBoost Default | 0.617 | 31% | 18% | Underperforms |
 | XGBoost Tuned  | 0.684 | 58% | 18% | Best model |
  - Note:High accuracy ≠ good model for imbalanced data.
+# Conclusion
+- This project built a complete end-to-end ML pipeline predicting 30-day hospital readmissions on 101,763 real patient encounters. XGBoost (Tuned) achieved 0.684 ROC-AUC with 58% recall consistent with published academic benchmarks of 0.65-0.75 for this problem.
 # Addl Information
 ## Project Date
 03-11-2026
@@ -96,7 +97,8 @@ score 3 slightly drops (10.94%) — suggesting highly complex patients receive m
 ## Data Cleaning
 - Dropped 5 huge missing columns(missing % above 40)
 - Filled 4 low missing columns
-
+## Challenge
+- Class imbalance was the biggest challenge. Only 11.2% of patients were readmitted which meant a naive model could achieve 88.8% accuracy by predicting everyone as not readmitted — completely useless clinically. This taught me that accuracy is a misleading metric for imbalanced healthcare data and that ROC-AUC and Recall are the metrics that actually matter. Handling this with scale_pos_weight in XGBoost was the key technical decision that improved our recall from 1% in Random Forest to 58% in tuned XGBoost.
 ## Domain Terms
 - ICD-9- International Classification of Diseases 9th Revision 
 
