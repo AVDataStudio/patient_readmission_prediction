@@ -70,8 +70,9 @@ score 3 slightly drops (10.94%) — suggesting highly complex patients receive m
 ### Models Built:
     - Logistic Regression  Baseline model: ROC-AUC: 0.649 — above random baseline (0.5), Recall for readmissions: 53% — finds half of actual cases, Precision for readmissions: 17% — high false alarm rate
     - Random Forest  More powerful model: ROC-AUC: 0.654 — above random baseline (0.5), Recall for readmissions: 1% — predicts all as not readmitted, Precision for readmissions: 59% — high false alarm rate| Accuracy-89% misleading
-    - XGBoost  Best performing model: 
-    - SHAP Analysis  Model explainability 
+    - XGBoost  Best performing model: ROC-AUC: 0.617 — below baseline. Recall: 31% — better than Random Forest but still weak. Precision: 18%. Default parameters insufficient for this imbalanced healthcare dataset.
+    - Fine Tuned XGBoost: Best Model:** ROC-AUC: 0.684 — highest across all models. Recall: 58% — finds majority of actual readmissions. Precision: 18% — acceptable given high cost of missed readmissions. Key tuning: max_depth=4, learning_rate=0.1, subsample=0.8, colsample_bytree=0.8,  scale_pos_weight=7.96.
+    - SHAP Analysis  Model explainability: Top predictors confirmed — discharge_disposition_id (0.25), number_inpatient (0.19), prior_visit_score (0.15), num_medications (0.08). EDA and SHAP findings in strong agreement — high confidence in analytical conclusions.
  - Note:High accuracy ≠ good model for imbalanced data.
 # Addl Information
 ## Project Date
