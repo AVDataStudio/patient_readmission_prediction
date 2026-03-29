@@ -5,13 +5,13 @@ Hospital readmissions within 30 days cost the U.S. healthcare system over $26 bi
 ## This project answers
 1. What patient demographics and clinical factors are most associated with 30-day readmission?
 2. Can this reliably predict which patienst will be readmitted before discharge?
-3. Which interventions(by daignosis) would have the highest cost saving impact?
+3. Which interventions(by diagnosis) would have the highest cost saving impact?
 ## Datset Source
 https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
 ## Tools
 - Anaconda
 - Jupyter
-- Python(Pandas, numpy, maplotlib, seaborn, scikit-learn,XGBo0st,SHAP)
+- Python(Pandas, numpy, maplotlib, seaborn, scikit-learn,XGBoost,SHAP)
 - GitHub
 ## Key Findings
 - Inpatient visits strongest predictor (263% increase in risk)
